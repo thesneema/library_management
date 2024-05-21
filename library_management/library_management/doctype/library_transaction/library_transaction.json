@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:LT-{YY}{MM}{DD}{####}",
+ "creation": "2024-03-22 10:27:02.127934",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "article",
+  "library_member",
+  "date",
+  "amended_from",
+  "delay_fine",
+  "damage_fine",
+  "total_fine",
+  "articles",
+  "fine"
+ ],
+ "fields": [
+  {
+   "fieldname": "article",
+   "fieldtype": "Link",
+   "label": "Article",
+   "options": "Article"
+  },
+  {
+   "fieldname": "library_member",
+   "fieldtype": "Link",
+   "label": "Library Member",
+   "options": "Library Member"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Issue\nReturn"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Library Transaction",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval:doc.type==\"Return\"",
+   "fieldname": "delay_fine",
+   "fieldtype": "Currency",
+   "label": "Delay Fine"
+  },
+  {
+   "depends_on": "eval:doc.type==\"Return\"",
+   "fieldname": "damage_fine",
+   "fieldtype": "Select",
+   "label": "Damage Fine",
+   "options": "0\n10\n20\n50\n100\n300"
+  },
+  {
+   "depends_on": "eval:doc.type==\"Return\"",
+   "fieldname": "total_fine",
+   "fieldtype": "Currency",
+   "label": "Total Fine"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date of Transaction"
+  },
+  {
+   "fieldname": "articles",
+   "fieldtype": "Table",
+   "label": "Articles",
+   "options": "Article list"
+  },
+  {
+   "depends_on": "eval:doc.type==\"Return\"",
+   "fieldname": "fine",
+   "fieldtype": "Table",
+   "label": "Fine",
+   "options": "Fine"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-05-21 10:11:47.306138",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Library Transaction",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
