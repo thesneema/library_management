@@ -16,14 +16,11 @@ class LibraryMembership(Document):
 			)
 		if exists:
 			frappe.throw("There is an active membership for this member")
-		loan_period = frappe.db.get_single_value("Library Settings", "loan_period")
-		self.to_date = frappe.utils.add_days(self.from_date, loan_period or 30)
 
 	def validate(self):
-		if self.from_date > self.to_date:
-			# frappe.throw("invalid date format")
-			frappe.throw(
-			    msg='Select a valid date',
-			    title='Invalid date',
-
-)
+		if self.from_date and self.to_date:
+			if self.from_date > self.to_date:
+				# frappe.throw("invalid date format")
+				frappe.throw(
+				    msg='Select a valid date',
+				    title='Invalid date',)
