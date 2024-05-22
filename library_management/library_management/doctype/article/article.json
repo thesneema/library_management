@@ -72,16 +72,19 @@
    "label": "Route"
   },
   {
+   "default": "0",
    "fieldname": "published",
-   "fieldtype": "Code",
-   "label": "published"
+   "fieldtype": "Check",
+   "label": "published",
+   "options": "0\n1"
   }
  ],
  "has_web_view": 1,
+ "image_field": "image",
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2024-03-22 12:14:44.223775",
+ "modified": "2024-05-21 15:04:17.740839",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
