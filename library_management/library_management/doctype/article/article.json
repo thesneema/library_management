@@ -8,15 +8,16 @@
  "engine": "InnoDB",
  "field_order": [
   "article",
-  "isbn",
   "publisher",
   "author",
-  "status",
+  "isbn",
   "column_break_yomm",
   "image",
   "route",
   "published",
+  "count",
   "section_break_gozk",
+  "unique_ids",
   "description"
  ],
  "fields": [
@@ -27,31 +28,9 @@
    "unique": 1
   },
   {
-   "fieldname": "image",
-   "fieldtype": "Attach Image",
-   "label": "image"
-  },
-  {
-   "fieldname": "author",
-   "fieldtype": "Data",
-   "label": "author"
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Text Editor",
-   "label": "Description"
-  },
-  {
    "fieldname": "isbn",
    "fieldtype": "Data",
    "label": "ISBN"
-  },
-  {
-   "default": "available",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "issued\navailable"
   },
   {
    "fieldname": "publisher",
@@ -59,12 +38,18 @@
    "label": "Publisher"
   },
   {
-   "fieldname": "section_break_gozk",
-   "fieldtype": "Section Break"
+   "fieldname": "author",
+   "fieldtype": "Data",
+   "label": "author"
   },
   {
    "fieldname": "column_break_yomm",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "image"
   },
   {
    "fieldname": "route",
@@ -77,6 +62,26 @@
    "fieldtype": "Check",
    "label": "published",
    "options": "0\n1"
+  },
+  {
+   "fieldname": "section_break_gozk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "unique_ids",
+   "fieldtype": "Table",
+   "label": "unique_ids",
+   "options": "unique"
+  },
+  {
+   "fieldname": "count",
+   "fieldtype": "Int",
+   "label": "count"
   }
  ],
  "has_web_view": 1,
@@ -84,7 +89,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2024-05-21 15:04:17.740839",
+ "modified": "2024-05-22 15:26:08.123237",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
