@@ -1,44 +1,36 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-05-20 16:33:28.344547",
+ "creation": "2024-05-22 12:26:19.190832",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "article",
-  "fine_type",
-  "fine_amount"
+  "unique_id",
+  "status"
  ],
  "fields": [
   {
-   "fieldname": "article",
-   "fieldtype": "Link",
+   "fieldname": "unique_id",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Article",
-   "options": "Article"
+   "label": "unique_id"
   },
   {
-   "fieldname": "fine_type",
+   "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Fine type",
-   "options": "Damage"
-  },
-  {
-   "fieldname": "fine_amount",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Fine Amount"
+   "label": "status",
+   "options": "available\nissued"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-22 10:02:17.116217",
+ "modified": "2024-05-22 12:32:53.360011",
  "modified_by": "Administrator",
  "module": "Library Management",
- "name": "Fine",
+ "name": "unique",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
